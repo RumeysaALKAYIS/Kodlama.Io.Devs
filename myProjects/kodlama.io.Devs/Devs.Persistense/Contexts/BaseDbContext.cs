@@ -43,7 +43,20 @@ namespace Devs.Persistense.Contexts
 
             ProgrammingLanguage[] languagesSeedData = { new (1,"C#")};
             modelBuilder.Entity<ProgrammingLanguage>().HasData(languagesSeedData);
-            
+
+
+            modelBuilder.Entity<Technology>(t =>
+            {
+                t.ToTable("Technologies").HasKey(k => k.Id);
+                t.Property(k => k.Id).HasColumnName("Id");
+                t.Property(k => k.Name).HasColumnName("Name");
+                t.Property(k => k.ProgrammingLanguageId).HasColumnName("ProgrammingLanguageId");
+                t.HasOne(k => k.ProgrammingLanguage);
+            }
+            );
+
+            Technology[] technologiesSeedData = { new(1, "WPF", 1), new(2, "ASP.NET", 1), new(3, "Spring", 2) };
+            modelBuilder.Entity<Technology>().HasData(technologiesSeedData);
         }
     }
 }
