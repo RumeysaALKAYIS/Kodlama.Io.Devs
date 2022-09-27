@@ -18,6 +18,7 @@ namespace Devs.Domain.Entities
 
         public ProgrammingLanguage(int id, string name):this()
         {
+
             Id= id;
             Name= name;
         }
