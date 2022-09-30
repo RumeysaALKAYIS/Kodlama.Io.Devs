@@ -17,4 +17,11 @@
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Features\Technologies\Constants\" />
+    <Folder Include="Features\Technologies\Models\" />
+    <Folder Include="Features\Technologies\Ruels\" />
+    <Folder Include="Features\Technologies\Queries\" />
+  </ItemGroup>
+
 </Project>
